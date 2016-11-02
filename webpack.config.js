@@ -25,6 +25,15 @@ var config = {
       {
         test: /\.css?/,
         loader: "style!css"
+      },
+      {
+        test: /\.sass$/,
+        loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        include: path.join(__dirname, 'img'),
+        loader: 'url-loader?limit=10000'
       }
     ]
   }
