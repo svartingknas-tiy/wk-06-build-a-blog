@@ -22121,7 +22121,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\n  background-color: black;\n  margin: 0; }\n\n.col-sm-4 {\n  background-color: grey;\n  color: white; }\n\nbody {\n  background: url(" + __webpack_require__(/*! ../img/pic.jpg */ 177) + "); }\n", ""]);
+	exports.push([module.id, ".header {\n  background-color: black;\n  margin: 0; }\n\n.col-sm-4 {\n  background-color: grey;\n  color: white; }\n\nbody {\n  background: url(" + __webpack_require__(/*! ../images/pic.jpg */ 177) + "); }\n", ""]);
 	
 	// exports
 
@@ -22187,14 +22187,14 @@
 
 /***/ },
 /* 177 */
-/*!*****************************!*\
-  !*** ./src/app/img/pic.jpg ***!
-  \*****************************/
+/*!********************************!*\
+  !*** ./src/app/images/pic.jpg ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
-	module.exports = __webpack_require__.p + "src/app/img/pic.jpg?c0004d2f5b";
+	module.exports = __webpack_require__.p + "src/app/images/pic.jpg?c0004d2f5b";
 
 /***/ },
 /* 178 */
