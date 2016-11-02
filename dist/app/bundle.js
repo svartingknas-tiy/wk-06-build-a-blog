@@ -21968,11 +21968,11 @@
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Body = __webpack_require__(/*! ./Body.js */ 178);
+	var _Body = __webpack_require__(/*! ./Body.js */ 179);
 	
 	var _Body2 = _interopRequireDefault(_Body);
 	
-	var _Footer = __webpack_require__(/*! ./Footer.js */ 179);
+	var _Footer = __webpack_require__(/*! ./Footer.js */ 180);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
@@ -22093,7 +22093,7 @@
 	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./Header.sass */ 175);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 178)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22121,7 +22121,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\n  background-color: black;\n  margin: 0; }\n\n.col-sm-4 {\n  background-color: grey;\n  color: white; }\n", ""]);
+	exports.push([module.id, ".header {\n  background-color: black;\n  margin: 0; }\n\n.col-sm-4 {\n  background-color: grey;\n  color: white; }\n\nbody {\n  background: url(" + __webpack_require__(/*! ../img/pic.jpg */ 177) + "); }\n", ""]);
 	
 	// exports
 
@@ -22187,6 +22187,17 @@
 
 /***/ },
 /* 177 */
+/*!*****************************!*\
+  !*** ./src/app/img/pic.jpg ***!
+  \*****************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	module.exports = __webpack_require__.p + "src/app/img/pic.jpg?c0004d2f5b";
+
+/***/ },
+/* 178 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -22441,7 +22452,7 @@
 
 
 /***/ },
-/* 178 */
+/* 179 */
 /*!************************************!*\
   !*** ./src/app/components/Body.js ***!
   \************************************/
@@ -22546,7 +22557,7 @@
 	exports.default = Body;
 
 /***/ },
-/* 179 */
+/* 180 */
 /*!**************************************!*\
   !*** ./src/app/components/Footer.js ***!
   \**************************************/
