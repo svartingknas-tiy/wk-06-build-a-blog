@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import header from './Header.sass'
+import header from './Main.sass'
 
 export default class Header extends React.Component {
   render () {

@@ -22121,7 +22121,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\n  background-color: black;\n  margin: 0; }\n\n.col-sm-4 {\n  background-color: grey;\n  color: white; }\n\nbody {\n  background: url(" + __webpack_require__(/*! ../images/pic.jpg */ 177) + "); }\n", ""]);
+	exports.push([module.id, ".header {\n  background-color: black;\n  margin: 0; }\n\n.col-sm-4 {\n  background-color: grey;\n  color: white; }\n\nbody {\n  background: url(" + __webpack_require__(/*! ../images/pic.jpg */ 177) + "); }\n\nfooter {\n  background-color: grey; }\n", ""]);
 	
 	// exports
 
