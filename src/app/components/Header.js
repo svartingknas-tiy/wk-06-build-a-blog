@@ -11,6 +11,7 @@ export default class Header extends React.Component {
           <h1>My First Blog</h1>
             <h3>this is the header of my first blog, the entries will follow shortly </h3>
         </div>
+        <hr />
       </div>
     );
   }
