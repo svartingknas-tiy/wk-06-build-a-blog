@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
       <div className="container">
           <hr />
         <footer className="container-fluid" >
-          <p>Footer data</p>
+          <p className="footer">Footer data</p>
         </footer>
     </div>
     );
