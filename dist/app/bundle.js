@@ -21987,13 +21987,19 @@
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Body = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Body.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _Entries = __webpack_require__(/*! ./Entries.js */ 180);
 	
-	var _Body2 = _interopRequireDefault(_Body);
+	var _Entries2 = _interopRequireDefault(_Entries);
 	
-	var _Footer = __webpack_require__(/*! ./Footer.js */ 180);
+	var _Footer = __webpack_require__(/*! ./Footer.js */ 187);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
+	
+	var _firebase = __webpack_require__(/*! firebase */ 181);
+	
+	var firebase = _interopRequireWildcard(_firebase);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22020,7 +22026,7 @@
 	        { className: 'container' },
 	        _react2.default.createElement(_Header2.default, null),
 	        _react2.default.createElement(_Sidebar2.default, null),
-	        _react2.default.createElement(Entries, null),
+	        _react2.default.createElement(_Entries2.default, { content: this.props.contentRef }),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
@@ -22599,9 +22605,9 @@
 
 /***/ },
 /* 180 */
-/*!**************************************!*\
-  !*** ./src/app/components/Footer.js ***!
-  \**************************************/
+/*!***************************************!*\
+  !*** ./src/app/components/Entries.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22620,6 +22626,12 @@
 	
 	var _Main2 = _interopRequireDefault(_Main);
 	
+	var _firebase = __webpack_require__(/*! firebase */ 181);
+	
+	var firebase = _interopRequireWildcard(_firebase);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22628,39 +22640,57 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Footer = function (_React$Component) {
-	  _inherits(Footer, _React$Component);
+	var Body = function (_React$Component) {
+	  _inherits(Body, _React$Component);
 	
-	  function Footer() {
-	    _classCallCheck(this, Footer);
+	  function Body() {
+	    _classCallCheck(this, Body);
 	
-	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Body.__proto__ || Object.getPrototypeOf(Body)).call(this));
+	
+	    _this.state = {
+	      content: ""
+	    };
+	    return _this;
 	  }
 	
-	  _createClass(Footer, [{
+	  _createClass(Body, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+	
+	      var rootRef = firebase.database().ref().child('0');
+	      var contentRef = rootRef.child('content');
+	      contentRef.on('value', function (snap) {
+	        _this2.setState({
+	          content: snap.val()
+	        });
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
-	        _react2.default.createElement('hr', null),
 	        _react2.default.createElement(
-	          'footer',
-	          { className: 'container-fluid' },
+	          'div',
+	          { className: 'row' },
 	          _react2.default.createElement(
-	            'p',
-	            { className: 'footer' },
-	            'Footer data'
-	          )
+	            'h2',
+	            null,
+	            'Blog Entries'
+	          ),
+	          this.state.content
 	        )
 	      );
 	    }
 	  }]);
 	
-	  return Footer;
+	  return Body;
 	}(_react2.default.Component);
 	
-	exports.default = Footer;
+	exports.default = Body;
 
 /***/ },
 /* 181 */
@@ -23322,6 +23352,71 @@
 	var X=function(a){"serviceWorker"in navigator&&navigator.serviceWorker.addEventListener("message",function(b){if(b.data&&b.data[t.m])switch(b=b.data,b[t.m]){case u.N:case u.H:a.Y.next(b[t.u])}},!1)};if(!(firebase&&firebase.INTERNAL&&firebase.INTERNAL.registerService))throw Error("Cannot install Firebase Messaging - be sure to load firebase-app.js first.");firebase.INTERNAL.registerService("messaging",function(a){return self&&"ServiceWorkerGlobalScope"in self?new S(a):new Y(a)},{Messaging:Y});})();
 	module.exports = firebase.messaging;
 
+
+/***/ },
+/* 187 */
+/*!**************************************!*\
+  !*** ./src/app/components/Footer.js ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Main = __webpack_require__(/*! ./Main.sass */ 174);
+	
+	var _Main2 = _interopRequireDefault(_Main);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Footer = function (_React$Component) {
+	  _inherits(Footer, _React$Component);
+	
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+	
+	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	  }
+	
+	  _createClass(Footer, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement('hr', null),
+	        _react2.default.createElement(
+	          'footer',
+	          { className: 'container-fluid' },
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'footer' },
+	            'Footer data'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Footer;
+	}(_react2.default.Component);
+	
+	exports.default = Footer;
 
 /***/ }
 /******/ ]);
