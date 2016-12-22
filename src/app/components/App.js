@@ -5,6 +5,7 @@ import Sidebar from './Sidebar.js'
 import Header from './Header.js'
 import Entries from './Entries.js'
 import Footer from './Footer.js'
+import Home from './Home.js'
 import * as firebase from 'firebase'
 
 export default class App extends React.Component {
@@ -13,7 +14,7 @@ export default class App extends React.Component {
       <div className='container'>
         <Header />
         <Sidebar />
-        <Entries  content={this.props.contentRef}/>
+        <Entries  content={this.props.nameRef}/>
         <Footer />
       </div>
     );
