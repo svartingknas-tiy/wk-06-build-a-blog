@@ -19,7 +19,7 @@ class App extends React.Component {
   constructor() {
   super();
   this.state = {
-    month: "sergio"
+    monthRef: "December",
   }
 }
 
@@ -29,7 +29,7 @@ componentDidMount () {
 
   monthRef.on('value', (snap) => {
     this.setState({
-      month: snap.val()
+      monthRef: snap.val()
     });
   });
 }
@@ -42,7 +42,7 @@ componentDidMount () {
           <div className="container">
             <h2>Blog Entries</h2>
             <div className="col-md-9 entries">
-               {this.state.month}
+               {this.state.monthRef}
               </div>
             </div>
         <Footer />
